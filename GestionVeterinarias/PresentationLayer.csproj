@@ -58,6 +58,12 @@
     <Compile Include="GestionPacientes.Designer.cs">
       <DependentUpon>GestionPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionVeterinarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionVeterinarios.Designer.cs">
+      <DependentUpon>GestionVeterinarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>

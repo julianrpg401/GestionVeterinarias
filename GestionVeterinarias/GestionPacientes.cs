@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestionVeterinarias
 {
-    public partial class Administrador : Form
+    public partial class GestionPacientes : Form
     {
-        public Administrador()
+        public GestionPacientes()
         {
             InitializeComponent();
         }

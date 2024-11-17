@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace GestionVeterinarias
 {
@@ -15,6 +16,56 @@ namespace GestionVeterinarias
         public Inicio()
         {
             InitializeComponent();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string usuario = txtUsuario.Text;
+                string clave = txtClave.Text;
+
+                string rol = null;
+
+                foreach (Control control in gbRol.Controls)
+                {
+                    if (control is System.Windows.Forms.RadioButton radioButton && radioButton.Checked)
+                    {
+                        rol = radioButton.Text;
+                        rol = rol.ToUpper();
+                        break; // Termina el ciclo porque ya encontró el seleccionado
+                    }
+                }
+
+                if (usuario == "" | clave == "")
+                {
+                    MessageBox.Show($"Error: Verifique que no haya ningún campo vacio.");
+                    return;
+                }
+
+                switch (rol)
+                {
+                    case "ADMINISTRADOR":
+                        Administrador administrador = new Administrador();
+                        administrador.ShowDialog();
+                        break;
+                    case "VETERINARIO":
+                        Veterinario veterinario = new Veterinario();
+                        veterinario.ShowDialog();
+                        break;
+                    case "RECEPCIONISTA":
+                        Recepcionista recepcionista = new Recepcionista();
+                        recepcionista.ShowDialog();
+                        break;
+
+                }
+
+                //MessageBox.Show($"{usuario}\n{clave}\n{rol}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al capturar los datos, verifique que el formulario esté correctamente diligenciado\n{ex.Message}\n{MessageBoxButtons.OK} {MessageBoxIcon.Error}");
+            }
         }
     }
 }

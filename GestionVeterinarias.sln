@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer", "EntityLayer\EntityLayer.csproj", "{1AA41985-5290-4FE3-9DED-A04185F44E4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Depurar", "Depurar\Depurar.csproj", "{97AB4934-F021-4ED2-BAFD-00F8D06FAC20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1AA41985-5290-4FE3-9DED-A04185F44E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AA41985-5290-4FE3-9DED-A04185F44E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AA41985-5290-4FE3-9DED-A04185F44E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97AB4934-F021-4ED2-BAFD-00F8D06FAC20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97AB4934-F021-4ED2-BAFD-00F8D06FAC20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97AB4934-F021-4ED2-BAFD-00F8D06FAC20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97AB4934-F021-4ED2-BAFD-00F8D06FAC20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

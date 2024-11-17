@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    public class Administrador
+    internal class Veterinario
     {
-        public int AdminId { get; set; }
+        public int VeterinarioId { get; set; }
         public int UsuarioId { get; set; }
         public string Nombre { get; set; }
-        public string Tel { get; set; }
+        public string Especializacion { get; set; }
+        public string Horario { get; set; }
     }
 }

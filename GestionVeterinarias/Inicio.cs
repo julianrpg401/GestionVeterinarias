@@ -33,7 +33,7 @@ namespace GestionVeterinarias
                     {
                         rol = radioButton.Text;
                         rol = rol.ToUpper();
-                        break; // Termina el ciclo porque ya encontró el seleccionado
+                        break;
                     }
                 }
 

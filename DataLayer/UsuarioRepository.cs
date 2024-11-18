@@ -32,7 +32,7 @@ namespace DataLayer
                     {
                         // Asignar los valores a los parámetros para evitar SQL Injection.
                         command.Parameters.AddWithValue("@nombre", nombre);
-                        command.Parameters.AddWithValue("@clave", clave); // Considera usar una versión encriptada si es sensible.
+                        command.Parameters.AddWithValue("@clave", clave);
                         command.Parameters.AddWithValue("@rol", rol);
 
                         // Ejecutar el comando y verificar si existe algún registro.

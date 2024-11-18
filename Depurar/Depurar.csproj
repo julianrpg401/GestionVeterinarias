@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{97AB4934-F021-4ED2-BAFD-00F8D06FAC20}</ProjectGuid>
+    <ProjectGuid>{9D665C9D-45D5-4EA5-BF80-CDCBCF949F9E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Depurar</RootNamespace>
     <AssemblyName>Depurar</AssemblyName>
@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
-      <Project>{BFD0DC44-FA4F-4F23-B4FA-3F43BDE99B3C}</Project>
+      <Project>{bfd0dc44-fa4f-4f23-b4fa-3f43bde99b3c}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
-      <Project>{1AA41985-5290-4FE3-9DED-A04185F44E4A}</Project>
+      <Project>{1aa41985-5290-4fe3-9ded-a04185f44e4a}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>

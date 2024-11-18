@@ -1,10 +1,10 @@
-﻿using DataLayer;
-using EntityLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntityLayer;
+using DataLayer;
 
 namespace Depurar
 {
@@ -12,11 +12,13 @@ namespace Depurar
     {
         static void Main(string[] args)
         {
-            DatabaseConnection conexion = new DatabaseConnection();
+            Administrador admin = new Administrador();
 
-            Administrador admin = conexion.GetAdmin();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
 
-            Console.WriteLine($"Id: {admin.Id}\nCod: {admin.Cod}\nNombre: {admin.Nombre}\nTel: {admin.Tel}");
+            admin = databaseConnection.GetAdmin();
+
+            Console.WriteLine($"{admin.AdminId}\n{admin.Nombre}\n{admin.Tel}");
         }
     }
 }

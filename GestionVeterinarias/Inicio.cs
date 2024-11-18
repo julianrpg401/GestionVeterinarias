@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using BusinessLayer;
+using DataLayer;
 
 namespace GestionVeterinarias
 {
@@ -37,9 +39,17 @@ namespace GestionVeterinarias
                     }
                 }
 
-                if (usuario == "" | clave == "")
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(clave) || string.IsNullOrEmpty(rol))
                 {
-                    MessageBox.Show($"Error: Verifique que no haya ningún campo vacio.");
+                    MessageBox.Show("Por favor, complete todos los campos.");
+                    return;
+                }
+
+                var validarUsuario = UsuarioRepository.ValidarUsuario(usuario, clave, rol);
+
+                if (!validarUsuario)
+                {
+                    MessageBox.Show($"El usuario no existe o ha ingresado los datos incorrectos.");
                     return;
                 }
 
@@ -60,7 +70,7 @@ namespace GestionVeterinarias
 
                 }
 
-                //MessageBox.Show($"{usuario}\n{clave}\n{rol}");
+                MessageBox.Show($"{usuario}\n{clave}\n{rol}");
             }
             catch (Exception ex)
             {

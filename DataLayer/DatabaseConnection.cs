@@ -15,78 +15,57 @@ namespace DataLayer
 {
     public class DatabaseConnection
     {
-        private readonly DatabaseConnection _instance;
-        private readonly SqlConnection _connection;
+        private readonly string _connectionString;
+        public string ConnectionString => _connectionString;
 
-        private DatabaseConnection()
+        public DatabaseConnection()
         {
-            _connection = new SqlConnection("Data Source=JULIAN;Initial Catalog=GestionVeterinarias;Integrated Security=True");
+            _connectionString = ConfigurationManager.ConnectionStrings["DbConnectionString"].ConnectionString;
         }
 
+        public Administrador GetAdmin()
+        {
+            Administrador admin = null;
 
+            string query = "SELECT * FROM Administrador";
 
-        //public Administrador GetAdmin()
-        //{
-        //    Administrador admin = null;
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
 
-        //    string query = "SELECT * FROM Administrador";
+                try
+                {
+                    connection.Open();
 
-        //    using (SqlConnection connection = new SqlConnection(cadenaConexion))
-        //    {
-        //        SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataReader reader = command.ExecuteReader();
 
-        //        try
-        //        {
-        //            connection.Open();
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        int cod = reader.GetInt32(1);
+                        string nombre = reader.GetString(2);
+                        string tel = reader.GetString(3);
 
-        //            SqlDataReader reader = command.ExecuteReader();
+                        admin = new Administrador
+                        {
+                            AdminId = id,
+                            UsuarioId = cod,
+                            Nombre = nombre,
+                            Tel = tel
+                        };
+                    }
 
-        //            while (reader.Read())
-        //            {
-        //                int id = reader.GetInt32(0);
-        //                int cod = reader.GetInt32(1);
-        //                string nombre = reader.GetString(2);
-        //                string tel = reader.GetString(3);
+                    reader.Close();
 
-        //                admin = new Administrador
-        //                {
-        //                    Id = id,
-        //                    Cod = cod,
-        //                    Nombre = nombre,
-        //                    Tel = tel,
-        //                };
-        //            }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Hay un error en la BD" + ex.Message);
+                }
+            }
 
-        //            reader.Close();
-
-        //            connection.Close();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new Exception("Hay un error en la BD" + ex.Message);
-        //        }
-        //    }
-
-        //    return admin;
-        //}
-
-        //public void VerficiarConexion()
-        //{
-        //    using (SqlConnection connection = new SqlConnection(cadenaConexion))
-        //    {
-        //        try
-        //        {
-        //            connection.Open();
-
-        //            Console.WriteLine("Conexión exitosa");
-
-        //            connection.Close();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
+            return admin;
+        }
     }
 }

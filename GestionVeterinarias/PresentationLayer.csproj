@@ -70,6 +70,12 @@
     <Compile Include="GestionPropietarios.Designer.cs">
       <DependentUpon>GestionPropietarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionRecepcionistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionRecepcionistas.Designer.cs">
+      <DependentUpon>GestionRecepcionistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionVeterinarios.cs">
       <SubType>Form</SubType>
     </Compile>

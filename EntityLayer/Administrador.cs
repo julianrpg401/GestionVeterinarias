@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    public class Administrador
+    public class Administrador : Usuario
     {
         public int AdminId { get; set; }
-        public int UsuarioId { get; set; }
-        public string Nombre { get; set; }
-        public string Tel { get; set; }
+        public string Telefono { get; set; }
+
+        public Administrador(string nombre, string telefono, string clave, string rol) : base (nombre, clave, rol)
+        {
+            Telefono = telefono;
+        }
     }
 }

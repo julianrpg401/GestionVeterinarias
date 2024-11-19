@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    internal class Recepcionista
+    public class Recepcionista : Usuario
     {
         public int RecepcionistaId { get; set; }
-        public int UsuarioId { get; set; }
-        public string Nombre { get; set; }
+        public string Email { get; set; }
         public string Telefono { get; set; }
+
+        public Recepcionista(string nombre, string email, string telefono, string clave, string rol) : base (nombre, clave, rol)
+        {
+            Email = email;
+            Telefono = telefono;
+        }
     }
 }

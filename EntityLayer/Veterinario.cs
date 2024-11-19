@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    internal class Veterinario
+    public class Veterinario : Usuario
     {
         public int VeterinarioId { get; set; }
-        public int UsuarioId { get; set; }
-        public string Nombre { get; set; }
         public string Especializacion { get; set; }
         public string Horario { get; set; }
+        public string Email { get; set; }
+
+        public Veterinario(string nombre, string especializacion, string horario, string email, string clave, string rol) : base (nombre, clave, rol)
+        {
+            Especializacion = especializacion;
+            Horario = horario;
+            Email = email;
+        }
     }
 }

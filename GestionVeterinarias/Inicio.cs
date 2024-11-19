@@ -45,30 +45,30 @@ namespace GestionVeterinarias
                     return;
                 }
 
-                var validarUsuario = UsuarioRepository.ValidarUsuario(usuario, clave, rol);
+                //var validarUsuario = UsuarioRepository.ValidarUsuario(usuario, clave, rol);
 
-                if (!validarUsuario)
-                {
-                    MessageBox.Show($"El usuario no existe o ha ingresado los datos incorrectos.");
-                    return;
-                }
+                //if (!validarUsuario)
+                //{
+                //    MessageBox.Show($"El usuario no existe o ha ingresado los datos incorrectos.");
+                //    return;
+                //}
 
-                switch (rol)
-                {
-                    case "ADMINISTRADOR":
-                        Administrador administrador = new Administrador();
-                        administrador.ShowDialog();
-                        break;
-                    case "VETERINARIO":
-                        FormVeterinario veterinario = new FormVeterinario();
-                        veterinario.ShowDialog();
-                        break;
-                    case "RECEPCIONISTA":
-                        FormRecepcionista recepcionista = new FormRecepcionista();
-                        recepcionista.ShowDialog();
-                        break;
+                //switch (rol)
+                //{
+                //    case "ADMINISTRADOR":
+                //        Administrador administrador = new Administrador();
+                //        administrador.ShowDialog();
+                //        break;
+                //    case "VETERINARIO":
+                //        FormVeterinario veterinario = new FormVeterinario();
+                //        veterinario.ShowDialog();
+                //        break;
+                //    case "RECEPCIONISTA":
+                //        FormRecepcionista recepcionista = new FormRecepcionista();
+                //        recepcionista.ShowDialog();
+                //        break;
 
-                }
+                //}
 
                 MessageBox.Show($"{usuario}\n{clave}\n{rol}");
             }

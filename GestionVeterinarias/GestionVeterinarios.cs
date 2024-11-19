@@ -35,17 +35,17 @@ namespace GestionVeterinarias
             email = txtEmail.Text;
             clave = txtClave.Text;
 
-            Veterinario veterinario = EntityFactory.CreateVeterinario(nombre, especializacion, horario, email, clave);
+            //Veterinario veterinario = EntityFactory.CreateVeterinario(nombre, especializacion, horario, email, clave);
 
-            var validarUsuario = VeterinarioRepository.ValidarVeterinario(veterinario);
+            //var validarUsuario = VeterinarioRepository.ValidarVeterinario(veterinario);
 
-            if (validarUsuario)
-            {
-                MessageBox.Show($"El usuario ya existe en la base de datos.");
-                return;
-            }
+            //if (validarUsuario)
+            //{
+            //    MessageBox.Show($"El usuario ya existe en la base de datos.");
+            //    return;
+            //}
 
-            entityBusiness.
+            //entityBusiness.
         }
     }
 }

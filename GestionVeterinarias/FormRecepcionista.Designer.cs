@@ -1,6 +1,6 @@
 ﻿namespace GestionVeterinarias
 {
-    partial class Recepcionista
+    partial class FormRecepcionista
     {
         /// <summary>
         /// Required designer variable.

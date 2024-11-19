@@ -60,11 +60,11 @@ namespace GestionVeterinarias
                         administrador.ShowDialog();
                         break;
                     case "VETERINARIO":
-                        Veterinario veterinario = new Veterinario();
+                        FormVeterinario veterinario = new FormVeterinario();
                         veterinario.ShowDialog();
                         break;
                     case "RECEPCIONISTA":
-                        Recepcionista recepcionista = new Recepcionista();
+                        FormRecepcionista recepcionista = new FormRecepcionista();
                         recepcionista.ShowDialog();
                         break;
 

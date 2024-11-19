@@ -39,11 +39,19 @@
             this.lblHorario = new System.Windows.Forms.Label();
             this.lblEspecializacion = new System.Windows.Forms.Label();
             this.lblNombreV = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.gbDatosVeterinario.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDatosVeterinario
             // 
+            this.gbDatosVeterinario.Controls.Add(this.txtEmail);
+            this.gbDatosVeterinario.Controls.Add(this.lblEmail);
+            this.gbDatosVeterinario.Controls.Add(this.txtClave);
+            this.gbDatosVeterinario.Controls.Add(this.lblClave);
             this.gbDatosVeterinario.Controls.Add(this.btnModificar);
             this.gbDatosVeterinario.Controls.Add(this.btnConsultar);
             this.gbDatosVeterinario.Controls.Add(this.btnEliminar);
@@ -56,15 +64,15 @@
             this.gbDatosVeterinario.Controls.Add(this.lblNombreV);
             this.gbDatosVeterinario.Location = new System.Drawing.Point(12, 12);
             this.gbDatosVeterinario.Name = "gbDatosVeterinario";
-            this.gbDatosVeterinario.Size = new System.Drawing.Size(446, 212);
+            this.gbDatosVeterinario.Size = new System.Drawing.Size(446, 269);
             this.gbDatosVeterinario.TabIndex = 0;
             this.gbDatosVeterinario.TabStop = false;
             this.gbDatosVeterinario.Text = "Datos del veterinario";
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(129, 155);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Location = new System.Drawing.Point(125, 217);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(89, 35);
             this.btnModificar.TabIndex = 9;
@@ -73,8 +81,8 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(222, 155);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultar.Location = new System.Drawing.Point(218, 217);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(89, 35);
             this.btnConsultar.TabIndex = 8;
@@ -83,8 +91,8 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(315, 155);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(311, 217);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(89, 35);
             this.btnEliminar.TabIndex = 7;
@@ -93,13 +101,14 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(37, 155);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrar.Location = new System.Drawing.Point(33, 217);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(89, 35);
             this.btnRegistrar.TabIndex = 6;
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtHorario
             // 
@@ -149,11 +158,45 @@
             this.lblNombreV.TabIndex = 0;
             this.lblNombreV.Text = "Nombre";
             // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(193, 146);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(156, 20);
+            this.txtClave.TabIndex = 11;
+            this.txtClave.UseSystemPasswordChar = true;
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.Location = new System.Drawing.Point(78, 149);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(34, 13);
+            this.lblClave.TabIndex = 10;
+            this.lblClave.Text = "Clave";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(193, 120);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(156, 20);
+            this.txtEmail.TabIndex = 13;
+            this.txtEmail.UseSystemPasswordChar = true;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(78, 123);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 12;
+            this.lblEmail.Text = "Email";
+            // 
             // GestionVeterinarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 236);
+            this.ClientSize = new System.Drawing.Size(470, 293);
             this.Controls.Add(this.gbDatosVeterinario);
             this.Name = "GestionVeterinarios";
             this.Text = "Gestión de veterinarios";
@@ -176,5 +219,9 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.Label lblClave;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

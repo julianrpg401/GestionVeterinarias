@@ -16,6 +16,7 @@ namespace GestionVeterinarias
     public partial class GestionVeterinarios : Form
     {
         EntityBusiness entityBusiness = new EntityBusiness();
+
         private string nombre;
         private string especializacion;
         private string horario;
@@ -35,17 +36,9 @@ namespace GestionVeterinarias
             email = txtEmail.Text;
             clave = txtClave.Text;
 
-            //Veterinario veterinario = EntityFactory.CreateVeterinario(nombre, especializacion, horario, email, clave);
+            entityBusiness.AgregarUsuario(nombre, especializacion, horario, email, clave);
 
-            //var validarUsuario = VeterinarioRepository.ValidarVeterinario(veterinario);
-
-            //if (validarUsuario)
-            //{
-            //    MessageBox.Show($"El usuario ya existe en la base de datos.");
-            //    return;
-            //}
-
-            //entityBusiness.
+            MessageBox.Show("Veterinario agregado exitosamente.");
         }
     }
 }

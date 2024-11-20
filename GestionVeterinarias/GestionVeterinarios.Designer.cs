@@ -181,7 +181,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(156, 20);
             this.txtEmail.TabIndex = 13;
-            this.txtEmail.UseSystemPasswordChar = true;
             // 
             // lblEmail
             // 

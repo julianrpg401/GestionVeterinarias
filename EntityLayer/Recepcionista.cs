@@ -12,7 +12,7 @@ namespace EntityLayer
         public string Email { get; set; }
         public string Telefono { get; set; }
 
-        public Recepcionista(string nombre, string email, string telefono, string clave, string rol) : base (nombre, clave, rol)
+        public Recepcionista(string nombre, string email, string telefono, string clave, string rol = "Recepcionista") : base (nombre, clave, rol)
         {
             Email = email;
             Telefono = telefono;

@@ -11,7 +11,7 @@ namespace EntityLayer
         public int AdminId { get; set; }
         public string Telefono { get; set; }
 
-        public Administrador(string nombre, string telefono, string clave, string rol) : base(nombre, clave, rol)
+        public Administrador(string nombre, string telefono, string clave, string rol = "Administrador") : base(nombre, clave, rol)
         {
             Telefono = telefono;
         }

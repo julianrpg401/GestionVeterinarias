@@ -16,7 +16,9 @@ namespace EntityLayer
 
         public Usuario(string nombreUsuario, string clave, string rol)
         {
-
+            NombreUsuario = nombreUsuario;
+            Clave = clave;
+            Rol = rol;
         }
     }
 }

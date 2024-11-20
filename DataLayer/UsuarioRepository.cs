@@ -13,40 +13,53 @@ namespace DataLayer
 {
     public class UsuarioRepository
     {
-        //private static DatabaseConnection _connection = new DatabaseConnection();
+        private readonly SqlConnection _connection;
+        private readonly SqlTransaction _transaction;
 
-        //public static bool ValidarUsuario(string nombre, string clave, string rol)
-        //{
-        //    bool usuarioValido = false;
+        public UsuarioRepository(SqlConnection connection, SqlTransaction transaction = null)
+        {
+            _connection = connection;
+            _transaction = transaction;
+        }
 
-        //    // Query para verificar los parámetros en la base de datos.
-        //    string query = "SELECT COUNT(*) FROM Usuario WHERE nombreUsuario = @nombre AND clave = @clave AND rol = @rol";
+        // Método para agregar un veterinario
+        public void Add(Veterinario veterinario)
+        {
+            try
+            {
+                string insertUsuarioQuery = @"INSERT INTO Usuario (nombreUsuario, clave, rol)
+                                            OUTPUT INSERTED.UsuarioId
+                                            VALUES (@nombre, @clave, @rol)";
 
-        //    using (SqlConnection connection = new SqlConnection(_connection.ConnectionString))
-        //    {
-        //        try
-        //        {
-        //            connection.Open();
+                int usuarioId;
 
-        //            using (SqlCommand command = new SqlCommand(query, connection))
-        //            {
-        //                // Asignar los valores a los parámetros para evitar SQL Injection.
-        //                command.Parameters.AddWithValue("@nombre", nombre);
-        //                command.Parameters.AddWithValue("@clave", clave);
-        //                command.Parameters.AddWithValue("@rol", rol);
+                using (SqlCommand command = new SqlCommand(insertUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombre", veterinario.NombreUsuario);
+                    command.Parameters.AddWithValue("@clave", veterinario.Clave);
+                    command.Parameters.AddWithValue("@rol", veterinario.Rol);
 
-        //                // Ejecutar el comando y verificar si existe algún registro.
-        //                int count = (int)command.ExecuteScalar();
-        //                usuarioValido = count > 0;
-        //            }
-        //        }
-        //        catch (SqlException ex)
-        //        {
-        //            MessageBox.Show("Error al validar el usuario: " + ex.Message);
-        //        }
-        //    }
+                    usuarioId = (int)command.ExecuteScalar();
+                }
 
-        //    return usuarioValido;
-        //}
+                string insertVeterinarioQuery = @"INSERT INTO Veterinario (usuarioId, nombre, especializacion, horario, email)
+                                                VALUES (@usuarioId, @nombre, @especializacion, @horario, @email)";
+
+                using (SqlCommand command = new SqlCommand(insertVeterinarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@usuarioId", usuarioId);
+                    command.Parameters.AddWithValue("@nombre", veterinario.NombreUsuario);
+                    command.Parameters.AddWithValue("@especializacion", veterinario.Especializacion);
+                    command.Parameters.AddWithValue("@horario", veterinario.Horario);
+                    command.Parameters.AddWithValue("@email", veterinario.Email);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al agregar empleado: " + ex.Message);
+            }
+        }
     }
 }

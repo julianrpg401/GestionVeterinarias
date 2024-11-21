@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.gbDatosVeterinario = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -39,10 +43,6 @@
             this.lblHorario = new System.Windows.Forms.Label();
             this.lblEspecializacion = new System.Windows.Forms.Label();
             this.lblNombreV = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.gbDatosVeterinario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,39 @@
             this.gbDatosVeterinario.TabIndex = 0;
             this.gbDatosVeterinario.TabStop = false;
             this.gbDatosVeterinario.Text = "Datos del veterinario";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(193, 120);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(156, 20);
+            this.txtEmail.TabIndex = 13;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(78, 123);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 12;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(193, 146);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(156, 20);
+            this.txtClave.TabIndex = 11;
+            this.txtClave.UseSystemPasswordChar = true;
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.Location = new System.Drawing.Point(78, 149);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(34, 13);
+            this.lblClave.TabIndex = 10;
+            this.lblClave.Text = "Clave";
             // 
             // btnModificar
             // 
@@ -157,39 +190,6 @@
             this.lblNombreV.Size = new System.Drawing.Size(44, 13);
             this.lblNombreV.TabIndex = 0;
             this.lblNombreV.Text = "Nombre";
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(193, 146);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(156, 20);
-            this.txtClave.TabIndex = 11;
-            this.txtClave.UseSystemPasswordChar = true;
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(78, 149);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(34, 13);
-            this.lblClave.TabIndex = 10;
-            this.lblClave.Text = "Clave";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(193, 120);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(156, 20);
-            this.txtEmail.TabIndex = 13;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(78, 123);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 12;
-            this.lblEmail.Text = "Email";
             // 
             // GestionVeterinarios
             // 

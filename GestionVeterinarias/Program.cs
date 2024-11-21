@@ -17,7 +17,7 @@ namespace GestionVeterinarias
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GestionVeterinarios());
+            Application.Run(new GestionRecepcionistas());
         }
     }
 }

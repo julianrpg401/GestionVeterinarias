@@ -22,6 +22,44 @@ namespace DataLayer
             _transaction = transaction;
         }
 
+        // Método para agregar un administrador
+        public void Add(Administrador administrador)
+        {
+            try
+            {
+                string insertUsuarioQuery = @"INSERT INTO Usuario (nombreUsuario, clave, rol)
+                                            OUTPUT INSERTED.UsuarioId
+                                            VALUES (@nombre, @clave, @rol)";
+
+                int usuarioId;
+
+                using (SqlCommand command = new SqlCommand(insertUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombre", administrador.NombreUsuario);
+                    command.Parameters.AddWithValue("@clave", administrador.Clave);
+                    command.Parameters.AddWithValue("@rol", administrador.Rol);
+
+                    usuarioId = (int)command.ExecuteScalar();
+                }
+
+                string insertAdministradorQuery = @"INSERT INTO Administrador (usuarioId, nombre, telefono)
+                                                VALUES (@usuarioId, @nombre, @telefono)";
+
+                using (SqlCommand command = new SqlCommand(insertAdministradorQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@usuarioId", usuarioId);
+                    command.Parameters.AddWithValue("@nombre", administrador.NombreUsuario);
+                    command.Parameters.AddWithValue("@telefono", administrador.Telefono);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al agregar administrador: " + ex.Message);
+            }
+        }
+
         // Método para agregar un veterinario
         public void Add(Veterinario veterinario)
         {
@@ -58,7 +96,46 @@ namespace DataLayer
             }
             catch (SqlException ex)
             {
-                throw new Exception("Error al agregar empleado: " + ex.Message);
+                throw new Exception("Error al agregar veterinario: " + ex.Message);
+            }
+        }
+
+        // Método para agregar un recepcionista
+        public void Add(Recepcionista recepcionista)
+        {
+            try
+            {
+                string insertUsuarioQuery = @"INSERT INTO Usuario (nombreUsuario, clave, rol)
+                                            OUTPUT INSERTED.UsuarioId
+                                            VALUES (@nombre, @clave, @rol)";
+
+                int usuarioId;
+
+                using (SqlCommand command = new SqlCommand(insertUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombre", recepcionista.NombreUsuario);
+                    command.Parameters.AddWithValue("@clave", recepcionista.Clave);
+                    command.Parameters.AddWithValue("@rol", recepcionista.Rol);
+
+                    usuarioId = (int)command.ExecuteScalar();
+                }
+
+                string insertRecepcionistaQuery = @"INSERT INTO Recepcionista (usuarioId, nombre, telefono, email)
+                                                VALUES (@usuarioId, @nombre, @telefono, @email)";
+
+                using (SqlCommand command = new SqlCommand(insertRecepcionistaQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@usuarioId", usuarioId);
+                    command.Parameters.AddWithValue("@nombre", recepcionista.NombreUsuario);
+                    command.Parameters.AddWithValue("@telefono", recepcionista.Telefono);
+                    command.Parameters.AddWithValue("@email", recepcionista.Email);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al agregar recepcionista: " + ex.Message);
             }
         }
     }

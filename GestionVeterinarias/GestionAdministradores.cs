@@ -11,30 +11,28 @@ using System.Windows.Forms;
 
 namespace GestionVeterinarias
 {
-    public partial class GestionRecepcionistas : Form
+    public partial class GestionAdministradores : Form
     {
         EntityBusiness entityBusiness = new EntityBusiness();
 
         private string nombre;
-        private string email;
         private string telefono;
         private string clave;
 
-        public GestionRecepcionistas()
+        public GestionAdministradores()
         {
             InitializeComponent();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            nombre = txtNombreR.Text;
-            email = txtEmail.Text;
+            nombre = txtNombreA.Text;
             telefono = txtTelefono.Text;
             clave = txtClave.Text;
 
-            entityBusiness.AgregarUsuario(nombre, email, telefono, clave);
+            entityBusiness.AgregarUsuario(nombre, telefono, clave);
 
-            MessageBox.Show("Recepcionista agregado exitosamente.");
+            MessageBox.Show("Administrador agregado exitosamente.");
         }
     }
 }

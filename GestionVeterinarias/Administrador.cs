@@ -46,5 +46,11 @@ namespace GestionVeterinarias
             GestionCitas gestionCitas = new GestionCitas();
             gestionCitas.ShowDialog();
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            GestionAdministradores gestionAdministradores = new GestionAdministradores();
+            gestionAdministradores.ShowDialog();
+        }
     }
 }

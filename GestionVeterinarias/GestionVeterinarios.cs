@@ -130,5 +130,36 @@ namespace GestionVeterinarias
                 MessageBox.Show("Error al actualizar veterinario: " + ex.Message);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvVeterinarios.CurrentRow != null)
+                {
+                    int id = Convert.ToInt32(dgvVeterinarios.CurrentRow.Cells["UsuarioId"].Value);
+
+                    entityBusiness.EliminarVeterinario(id);
+
+                    MessageBox.Show("Veterinario eliminado exitosamente.");
+
+                    CargarVeterinarios();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un veterinario para eliminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar veterinario: " + ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
     }
 }

@@ -120,5 +120,37 @@ namespace GestionVeterinarias
                 MessageBox.Show("Error al actualizar recepcionista: " + ex.Message);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvRecepcionistas.CurrentRow != null)
+                {
+                    int id = Convert.ToInt32(dgvRecepcionistas.CurrentRow.Cells["UsuarioId"].Value);
+
+                    entityBusiness.EliminarRecepcionista(id);
+
+                    MessageBox.Show("Recepcionista eliminado exitosamente.");
+
+                    CargarRecepcionistas();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un recepcionista para eliminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al eliminar recepcionista: " + ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
     }
 }

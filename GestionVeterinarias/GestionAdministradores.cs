@@ -113,5 +113,36 @@ namespace GestionVeterinarias
                 MessageBox.Show("Error al actualizar administrador: " + ex.Message);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvAdministradores.CurrentRow != null)
+                {
+                    int id = Convert.ToInt32(dgvAdministradores.CurrentRow.Cells["UsuarioId"].Value);
+
+                    entityBusiness.EliminarAdministrador(id);
+
+                    MessageBox.Show("administrador eliminado exitosamente.");
+
+                    CargarAdministradores();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un administrador para eliminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar administrador: " + ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
     }
 }

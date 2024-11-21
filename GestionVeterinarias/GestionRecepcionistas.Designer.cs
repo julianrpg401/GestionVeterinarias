@@ -32,7 +32,7 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -51,7 +51,7 @@
             this.gbDatosRecepcionista.Controls.Add(this.txtClave);
             this.gbDatosRecepcionista.Controls.Add(this.lblClave);
             this.gbDatosRecepcionista.Controls.Add(this.btnActualizar);
-            this.gbDatosRecepcionista.Controls.Add(this.btnConsultar);
+            this.gbDatosRecepcionista.Controls.Add(this.btnLimpiar);
             this.gbDatosRecepcionista.Controls.Add(this.btnEliminar);
             this.gbDatosRecepcionista.Controls.Add(this.btnRegistrar);
             this.gbDatosRecepcionista.Controls.Add(this.txtTelefono);
@@ -95,15 +95,16 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnConsultar
+            // btnLimpiar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(222, 196);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(89, 35);
-            this.btnConsultar.TabIndex = 8;
-            this.btnConsultar.Text = "CONSULTAR";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(222, 196);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(89, 35);
+            this.btnLimpiar.TabIndex = 8;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -114,6 +115,7 @@
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnRegistrar
             // 
@@ -191,7 +193,7 @@
             this.Controls.Add(this.dgvRecepcionistas);
             this.Controls.Add(this.gbDatosRecepcionista);
             this.Name = "GestionRecepcionistas";
-            this.Text = "GestionRecepcionistas";
+            this.Text = "Gestión de recepcionistas";
             this.gbDatosRecepcionista.ResumeLayout(false);
             this.gbDatosRecepcionista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcionistas)).EndInit();
@@ -203,7 +205,7 @@
 
         private System.Windows.Forms.GroupBox gbDatosRecepcionista;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtTelefono;

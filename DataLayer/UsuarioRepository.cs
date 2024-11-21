@@ -256,6 +256,87 @@ namespace DataLayer
             }
         }
 
+        // Método para eliminar un administrador
+        public void DeleteAdministrador(int id)
+        {
+            try
+            {
+                string deleteAdministradorQuery = @"DELETE FROM Administrador WHERE usuarioId = @id";
+
+                using (SqlCommand command = new SqlCommand(deleteAdministradorQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+
+                string deleteUsuarioQuery = @"DELETE FROM Usuario WHERE usuarioId = @id";
+
+                using (SqlCommand command = new SqlCommand(deleteUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al eliminar administrador: " + ex.Message);
+            }
+        }
+
+        // Método para eliminar un veterinario
+        public void DeleteVeterinario(int id)
+        {
+            try
+            {
+                string deleteVeterinarioQuery = @"DELETE FROM Veterinario WHERE usuarioId = @id";
+
+                using (SqlCommand command = new SqlCommand(deleteVeterinarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+
+                string deleteUsuarioQuery = @"DELETE FROM Usuario WHERE usuarioId = @id";
+
+                using (SqlCommand command = new SqlCommand(deleteUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al eliminar veterinario: " + ex.Message);
+            }
+        }
+
+        // Método para eliminar un recepcionista
+        public void DeleteRecepcionista(int id)
+        {
+            try
+            {
+                string deleteRecepcionistaQuery = @"DELETE FROM Recepcionista WHERE usuarioId = @id";
+
+                using (SqlCommand command = new SqlCommand(deleteRecepcionistaQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+
+                string deleteUsuarioQuery = @"DELETE FROM Usuario WHERE usuarioId = @id";
+
+                using (SqlCommand command = new SqlCommand(deleteUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al eliminar recepcionista: " + ex.Message);
+            }
+        }
+
         // Método para obtener todos los administradores
         public IEnumerable<Administrador> GetAllDbAdministradores()
         {

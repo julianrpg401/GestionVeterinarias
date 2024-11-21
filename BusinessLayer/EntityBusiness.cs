@@ -83,6 +83,51 @@ namespace BusinessLayer
             }
         }
 
+        // Método para eliminar un administrador
+        public void EliminarAdministrador(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("El Id del administrador debe ser un número positivo.");
+            }
+
+            using (var unitOfWork = new UnitOfWork())
+            {
+                unitOfWork.Usuario.DeleteAdministrador(id);
+                unitOfWork.Complete(); // Confirmar la transacción
+            }
+        }
+
+        // Método para eliminar un veterinario
+        public void EliminarVeterinario(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("El Id del veterinario debe ser un número positivo.");
+            }
+
+            using (var unitOfWork = new UnitOfWork())
+            {
+                unitOfWork.Usuario.DeleteVeterinario(id);
+                unitOfWork.Complete(); // Confirmar la transacción
+            }
+        }
+
+        // Método para eliminar un recepcionista
+        public void EliminarRecepcionista(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("El Id del recepcionista debe ser un número positivo.");
+            }
+
+            using (var unitOfWork = new UnitOfWork())
+            {
+                unitOfWork.Usuario.DeleteRecepcionista(id);
+                unitOfWork.Complete(); // Confirmar la transacción
+            }
+        }
+
         // Método para obtener todos los administradores
         public IEnumerable<Administrador> GetAllAdministradores()
         {

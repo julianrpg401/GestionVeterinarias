@@ -32,7 +32,7 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.gbDatosPropietario.Controls.Add(this.txtDireccion);
             this.gbDatosPropietario.Controls.Add(this.lblDireccion);
             this.gbDatosPropietario.Controls.Add(this.btnModificar);
-            this.gbDatosPropietario.Controls.Add(this.btnConsultar);
+            this.gbDatosPropietario.Controls.Add(this.btnLimpiar);
             this.gbDatosPropietario.Controls.Add(this.btnEliminar);
             this.gbDatosPropietario.Controls.Add(this.btnRegistrar);
             this.gbDatosPropietario.Controls.Add(this.txtTelefono);
@@ -91,15 +91,15 @@
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // btnConsultar
+            // btnLimpiar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(222, 196);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(89, 35);
-            this.btnConsultar.TabIndex = 8;
-            this.btnConsultar.Text = "CONSULTAR";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(222, 196);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(89, 35);
+            this.btnLimpiar.TabIndex = 8;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
@@ -175,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 270);
             this.Controls.Add(this.gbDatosPropietario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionPropietarios";
             this.Text = "Gestión de propietarios";
             this.gbDatosPropietario.ResumeLayout(false);
@@ -190,7 +190,7 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtTelefono;

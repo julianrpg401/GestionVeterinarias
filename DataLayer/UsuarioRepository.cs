@@ -138,5 +138,48 @@ namespace DataLayer
                 throw new Exception("Error al agregar recepcionista: " + ex.Message);
             }
         }
+
+        // Método para obtener todos los veterinarios
+        public IEnumerable<Veterinario> GetAll()
+        {
+            List<Veterinario> veterinarios = new List<Veterinario>();
+
+            try
+            {
+                string query = @"SELECT v.usuarioId, v.nombre, v.especializacion, v.horario, v.email, u.clave
+                                FROM Veterinario v
+                                INNER JOIN Usuario u ON v.usuarioId = u.UsuarioId";
+
+                using (SqlCommand command = new SqlCommand(query, _connection, _transaction))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Veterinario veterinario =
+                            new Veterinario
+                            (
+                                nombre: reader["nombre"].ToString(),
+                                especializacion: reader["especializacion"].ToString(),
+                                horario: reader["horario"].ToString(),
+                                email: reader["email"].ToString(),
+                                clave: reader["clave"].ToString()
+                            )
+                            {
+                                UsuarioId = Convert.ToInt32(reader["usuarioId"])
+                            };
+
+                            veterinarios.Add(veterinario);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener veterinarios: " + ex.Message);
+            }
+
+            return veterinarios;
+        }
     }
 }

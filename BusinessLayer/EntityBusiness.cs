@@ -46,5 +46,14 @@ namespace BusinessLayer
                 unitOfWork.Complete();
             }
         }
+
+        // Método para obtener todos los veterinarios
+        public IEnumerable<Veterinario> GetAllVeterinarios()
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                return unitOfWork.Usuario.GetAll();
+            }
+        }
     }
 }

@@ -31,7 +31,7 @@
             this.gbDatosAdministrador = new System.Windows.Forms.GroupBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             // 
             this.gbDatosAdministrador.Controls.Add(this.txtClave);
             this.gbDatosAdministrador.Controls.Add(this.lblClave);
-            this.gbDatosAdministrador.Controls.Add(this.btnModificar);
+            this.gbDatosAdministrador.Controls.Add(this.btnActualizar);
             this.gbDatosAdministrador.Controls.Add(this.btnConsultar);
             this.gbDatosAdministrador.Controls.Add(this.btnEliminar);
             this.gbDatosAdministrador.Controls.Add(this.btnRegistrar);
@@ -80,15 +80,15 @@
             this.lblClave.TabIndex = 10;
             this.lblClave.Text = "Clave";
             // 
-            // btnModificar
+            // btnActualizar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(130, 155);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(89, 35);
-            this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Location = new System.Drawing.Point(130, 155);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(89, 35);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.UseVisualStyleBackColor = true;
             // 
             // btnConsultar
             // 
@@ -183,7 +183,7 @@
         private System.Windows.Forms.GroupBox gbDatosAdministrador;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label lblClave;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnRegistrar;

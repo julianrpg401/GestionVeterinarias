@@ -139,8 +139,49 @@ namespace DataLayer
             }
         }
 
+        // Método para obtener todos los administradores
+        public IEnumerable<Administrador> GetAllDbAdministradores()
+        {
+            List<Administrador> administradores = new List<Administrador>();
+
+            try
+            {
+                string query = @"SELECT a.usuarioId, a.nombre, a.telefono, u.clave
+                                FROM Administrador a
+                                INNER JOIN Usuario u ON a.usuarioId = u.UsuarioId";
+
+                using (SqlCommand command = new SqlCommand(query, _connection, _transaction))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Administrador administrador =
+                            new Administrador
+                            (
+                                nombre: reader["nombre"].ToString(),
+                                telefono: reader["telefono"].ToString(),
+                                clave: reader["clave"].ToString()
+                            )
+                            {
+                                UsuarioId = Convert.ToInt32(reader["usuarioId"])
+                            };
+
+                            administradores.Add(administrador);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener administradores: " + ex.Message);
+            }
+
+            return administradores;
+        }
+
         // Método para obtener todos los veterinarios
-        public IEnumerable<Veterinario> GetAll()
+        public IEnumerable<Veterinario> GetAllDbVeterinarios()
         {
             List<Veterinario> veterinarios = new List<Veterinario>();
 
@@ -180,6 +221,48 @@ namespace DataLayer
             }
 
             return veterinarios;
+        }
+
+        // Método para obtener todos los recepcionistas
+        public IEnumerable<Recepcionista> GetAllDbRecepcionistas()
+        {
+            List<Recepcionista> recepcionistas = new List<Recepcionista>();
+
+            try
+            {
+                string query = @"SELECT r.usuarioId, r.nombre, r.telefono, r.email, u.clave
+                                FROM Recepcionista r
+                                INNER JOIN Usuario u ON r.usuarioId = u.UsuarioId";
+
+                using (SqlCommand command = new SqlCommand(query, _connection, _transaction))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Recepcionista recepcionista =
+                            new Recepcionista
+                            (
+                                nombre: reader["nombre"].ToString(),
+                                telefono: reader["telefono"].ToString(),
+                                email: reader["email"].ToString(),
+                                clave: reader["clave"].ToString()
+                            )
+                            {
+                                UsuarioId = Convert.ToInt32(reader["usuarioId"])
+                            };
+
+                            recepcionistas.Add(recepcionista);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener recepcionistas: " + ex.Message);
+            }
+
+            return recepcionistas;
         }
     }
 }

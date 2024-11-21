@@ -47,12 +47,30 @@ namespace BusinessLayer
             }
         }
 
+        // Método para obtener todos los administradores
+        public IEnumerable<Administrador> GetAllAdministradores()
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                return unitOfWork.Usuario.GetAllDbAdministradores();
+            }
+        }
+
         // Método para obtener todos los veterinarios
         public IEnumerable<Veterinario> GetAllVeterinarios()
         {
             using (var unitOfWork = new UnitOfWork())
             {
-                return unitOfWork.Usuario.GetAll();
+                return unitOfWork.Usuario.GetAllDbVeterinarios();
+            }
+        }
+
+        // Método para obtener todos los recepcionistas
+        public IEnumerable<Recepcionista> GetAllRecepcionistas()
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                return unitOfWork.Usuario.GetAllDbRecepcionistas();
             }
         }
     }

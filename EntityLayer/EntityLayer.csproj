@@ -49,7 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
+    <Compile Include="Cita.cs" />
+    <Compile Include="Factura.cs" />
+    <Compile Include="Mascota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propietario.cs" />
+    <Compile Include="Recepcionista.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="Veterinario.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

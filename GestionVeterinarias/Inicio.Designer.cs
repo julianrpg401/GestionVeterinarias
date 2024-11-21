@@ -38,14 +38,12 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbLogin.SuspendLayout();
             this.gbRol.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbLogin
             // 
-            this.gbLogin.Controls.Add(this.label1);
             this.gbLogin.Controls.Add(this.btnEntrar);
             this.gbLogin.Controls.Add(this.txtClave);
             this.gbLogin.Controls.Add(this.gbRol);
@@ -53,9 +51,9 @@
             this.gbLogin.Controls.Add(this.lblClave);
             this.gbLogin.Controls.Add(this.lblUsuario);
             this.gbLogin.Location = new System.Drawing.Point(8, 8);
-            this.gbLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbLogin.Margin = new System.Windows.Forms.Padding(2);
             this.gbLogin.Name = "gbLogin";
-            this.gbLogin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbLogin.Padding = new System.Windows.Forms.Padding(2);
             this.gbLogin.Size = new System.Drawing.Size(375, 261);
             this.gbLogin.TabIndex = 0;
             this.gbLogin.TabStop = false;
@@ -64,20 +62,22 @@
             // btnEntrar
             // 
             this.btnEntrar.Location = new System.Drawing.Point(133, 194);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(98, 44);
             this.btnEntrar.TabIndex = 8;
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // txtClave
             // 
             this.txtClave.Location = new System.Drawing.Point(143, 69);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(2);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(109, 20);
             this.txtClave.TabIndex = 7;
+            this.txtClave.UseSystemPasswordChar = true;
             // 
             // gbRol
             // 
@@ -85,9 +85,9 @@
             this.gbRol.Controls.Add(this.rbRecepcionista);
             this.gbRol.Controls.Add(this.rbAdministrador);
             this.gbRol.Location = new System.Drawing.Point(23, 105);
-            this.gbRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbRol.Margin = new System.Windows.Forms.Padding(2);
             this.gbRol.Name = "gbRol";
-            this.gbRol.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbRol.Padding = new System.Windows.Forms.Padding(2);
             this.gbRol.Size = new System.Drawing.Size(320, 68);
             this.gbRol.TabIndex = 3;
             this.gbRol.TabStop = false;
@@ -97,7 +97,7 @@
             // 
             this.rbVeterinario.AutoSize = true;
             this.rbVeterinario.Location = new System.Drawing.Point(121, 29);
-            this.rbVeterinario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbVeterinario.Margin = new System.Windows.Forms.Padding(2);
             this.rbVeterinario.Name = "rbVeterinario";
             this.rbVeterinario.Size = new System.Drawing.Size(75, 17);
             this.rbVeterinario.TabIndex = 1;
@@ -109,7 +109,7 @@
             // 
             this.rbRecepcionista.AutoSize = true;
             this.rbRecepcionista.Location = new System.Drawing.Point(199, 29);
-            this.rbRecepcionista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbRecepcionista.Margin = new System.Windows.Forms.Padding(2);
             this.rbRecepcionista.Name = "rbRecepcionista";
             this.rbRecepcionista.Size = new System.Drawing.Size(93, 17);
             this.rbRecepcionista.TabIndex = 2;
@@ -121,7 +121,7 @@
             // 
             this.rbAdministrador.AutoSize = true;
             this.rbAdministrador.Location = new System.Drawing.Point(29, 29);
-            this.rbAdministrador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbAdministrador.Margin = new System.Windows.Forms.Padding(2);
             this.rbAdministrador.Name = "rbAdministrador";
             this.rbAdministrador.Size = new System.Drawing.Size(88, 17);
             this.rbAdministrador.TabIndex = 0;
@@ -132,7 +132,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(143, 41);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(109, 20);
             this.txtUsuario.TabIndex = 6;
@@ -157,22 +157,13 @@
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = "Usuario";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 278);
             this.Controls.Add(this.gbLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.gbLogin.ResumeLayout(false);
@@ -195,7 +186,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label label1;
     }
 }
 

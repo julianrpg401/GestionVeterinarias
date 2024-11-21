@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs">
+    <Compile Include="FormAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador.Designer.cs">
-      <DependentUpon>Administrador.cs</DependentUpon>
+    <Compile Include="FormAdministrador.Designer.cs">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAdministradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAdministradores.Designer.cs">
+      <DependentUpon>GestionAdministradores.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionCitas.cs">
       <SubType>Form</SubType>
@@ -70,6 +76,12 @@
     <Compile Include="GestionPropietarios.Designer.cs">
       <DependentUpon>GestionPropietarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionRecepcionistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionRecepcionistas.Designer.cs">
+      <DependentUpon>GestionRecepcionistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionVeterinarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,20 +96,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recepcionista.cs">
+    <Compile Include="FormRecepcionista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recepcionista.Designer.cs">
-      <DependentUpon>Recepcionista.cs</DependentUpon>
+    <Compile Include="FormRecepcionista.Designer.cs">
+      <DependentUpon>FormRecepcionista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Veterinario.cs">
+    <Compile Include="FormVeterinario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Veterinario.Designer.cs">
-      <DependentUpon>Veterinario.cs</DependentUpon>
+    <Compile Include="FormVeterinario.Designer.cs">
+      <DependentUpon>FormVeterinario.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Administrador.resx">
-      <DependentUpon>Administrador.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdministrador.resx">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAdministradores.resx">
+      <DependentUpon>GestionAdministradores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionCitas.resx">
       <DependentUpon>GestionCitas.cs</DependentUpon>
@@ -107,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionPropietarios.resx">
       <DependentUpon>GestionPropietarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionRecepcionistas.resx">
+      <DependentUpon>GestionRecepcionistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionVeterinarios.resx">
       <DependentUpon>GestionVeterinarios.cs</DependentUpon>
@@ -123,11 +141,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Recepcionista.resx">
-      <DependentUpon>Recepcionista.cs</DependentUpon>
+    <EmbeddedResource Include="FormRecepcionista.resx">
+      <DependentUpon>FormRecepcionista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Veterinario.resx">
-      <DependentUpon>Veterinario.cs</DependentUpon>
+    <EmbeddedResource Include="FormVeterinario.resx">
+      <DependentUpon>FormVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

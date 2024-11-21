@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs">
+    <Compile Include="FormAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador.Designer.cs">
-      <DependentUpon>Administrador.cs</DependentUpon>
+    <Compile Include="FormAdministrador.Designer.cs">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionAdministradores.cs">
       <SubType>Form</SubType>
@@ -108,8 +108,8 @@
     <Compile Include="FormVeterinario.Designer.cs">
       <DependentUpon>FormVeterinario.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Administrador.resx">
-      <DependentUpon>Administrador.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdministrador.resx">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionAdministradores.resx">
       <DependentUpon>GestionAdministradores.cs</DependentUpon>

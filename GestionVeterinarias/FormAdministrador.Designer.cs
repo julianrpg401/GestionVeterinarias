@@ -1,6 +1,6 @@
 ﻿namespace GestionVeterinarias
 {
-    partial class Administrador
+    partial class FormAdministrador
     {
         /// <summary>
         /// Required designer variable.

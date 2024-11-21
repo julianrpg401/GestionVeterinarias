@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.gbDatosRecepcionista = new System.Windows.Forms.GroupBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNombreR = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblNombreR = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblNombreR = new System.Windows.Forms.Label();
+            this.dgvRecepcionistas = new System.Windows.Forms.DataGridView();
             this.gbDatosRecepcionista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcionistas)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDatosRecepcionista
@@ -60,83 +62,10 @@
             this.gbDatosRecepcionista.Controls.Add(this.lblNombreR);
             this.gbDatosRecepcionista.Location = new System.Drawing.Point(12, 12);
             this.gbDatosRecepcionista.Name = "gbDatosRecepcionista";
-            this.gbDatosRecepcionista.Size = new System.Drawing.Size(446, 217);
+            this.gbDatosRecepcionista.Size = new System.Drawing.Size(446, 269);
             this.gbDatosRecepcionista.TabIndex = 1;
             this.gbDatosRecepcionista.TabStop = false;
             this.gbDatosRecepcionista.Text = "Datos del recepcionista";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(130, 159);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(89, 35);
-            this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(223, 159);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(89, 35);
-            this.btnConsultar.TabIndex = 8;
-            this.btnConsultar.Text = "CONSULTAR";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(316, 159);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(89, 35);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "ELIMINAR";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(38, 159);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(89, 35);
-            this.btnRegistrar.TabIndex = 6;
-            this.btnRegistrar.Text = "REGISTRAR";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(193, 94);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(156, 20);
-            this.txtTelefono.TabIndex = 5;
-            // 
-            // txtNombreR
-            // 
-            this.txtNombreR.Location = new System.Drawing.Point(193, 42);
-            this.txtNombreR.Name = "txtNombreR";
-            this.txtNombreR.Size = new System.Drawing.Size(156, 20);
-            this.txtNombreR.TabIndex = 3;
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(78, 97);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefono.TabIndex = 2;
-            this.lblTelefono.Text = "Telefono";
-            // 
-            // lblNombreR
-            // 
-            this.lblNombreR.AutoSize = true;
-            this.lblNombreR.Location = new System.Drawing.Point(78, 45);
-            this.lblNombreR.Name = "lblNombreR";
-            this.lblNombreR.Size = new System.Drawing.Size(44, 13);
-            this.lblNombreR.TabIndex = 0;
-            this.lblNombreR.Text = "Nombre";
             // 
             // txtClave
             // 
@@ -155,6 +84,77 @@
             this.lblClave.TabIndex = 10;
             this.lblClave.Text = "Clave";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(129, 196);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(89, 35);
+            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(222, 196);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(89, 35);
+            this.btnConsultar.TabIndex = 8;
+            this.btnConsultar.Text = "CONSULTAR";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(315, 196);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(89, 35);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(37, 196);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(89, 35);
+            this.btnRegistrar.TabIndex = 6;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(193, 94);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(156, 20);
+            this.txtTelefono.TabIndex = 5;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(193, 68);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(156, 20);
+            this.txtEmail.TabIndex = 4;
+            // 
+            // txtNombreR
+            // 
+            this.txtNombreR.Location = new System.Drawing.Point(193, 42);
+            this.txtNombreR.Name = "txtNombreR";
+            this.txtNombreR.Size = new System.Drawing.Size(156, 20);
+            this.txtNombreR.TabIndex = 3;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(78, 97);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.TabIndex = 2;
+            this.lblTelefono.Text = "Telefono";
+            // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
@@ -164,23 +164,36 @@
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "Email";
             // 
-            // txtEmail
+            // lblNombreR
             // 
-            this.txtEmail.Location = new System.Drawing.Point(193, 68);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(156, 20);
-            this.txtEmail.TabIndex = 4;
+            this.lblNombreR.AutoSize = true;
+            this.lblNombreR.Location = new System.Drawing.Point(78, 45);
+            this.lblNombreR.Name = "lblNombreR";
+            this.lblNombreR.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreR.TabIndex = 0;
+            this.lblNombreR.Text = "Nombre";
+            // 
+            // dgvRecepcionistas
+            // 
+            this.dgvRecepcionistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecepcionistas.Location = new System.Drawing.Point(464, 12);
+            this.dgvRecepcionistas.Name = "dgvRecepcionistas";
+            this.dgvRecepcionistas.Size = new System.Drawing.Size(573, 269);
+            this.dgvRecepcionistas.TabIndex = 2;
+            this.dgvRecepcionistas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecepcionistas_CellClick);
             // 
             // GestionRecepcionistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 240);
+            this.ClientSize = new System.Drawing.Size(1046, 291);
+            this.Controls.Add(this.dgvRecepcionistas);
             this.Controls.Add(this.gbDatosRecepcionista);
             this.Name = "GestionRecepcionistas";
             this.Text = "GestionRecepcionistas";
             this.gbDatosRecepcionista.ResumeLayout(false);
             this.gbDatosRecepcionista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecepcionistas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +213,6 @@
         private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.DataGridView dgvRecepcionistas;
     }
 }

@@ -73,6 +73,22 @@ namespace GestionVeterinarias
             dgvVeterinarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        private void dgvVeterinarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvVeterinarios.Rows[e.RowIndex];
+
+                // Asigna los valores de las celdas a los campos del formulario
+                txtNombreV.Text = filaSeleccionada.Cells["NombreUsuario"].Value?.ToString();
+                txtEspecializacion.Text = filaSeleccionada.Cells["Especializacion"].Value?.ToString();
+                txtHorario.Text = filaSeleccionada.Cells["Horario"].Value?.ToString();
+                txtEmail.Text = filaSeleccionada.Cells["Email"].Value?.ToString();
+                txtClave.Text = filaSeleccionada.Cells["Clave"].Value?.ToString();
+            }
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             nombre = txtNombreV.Text;
@@ -89,19 +105,29 @@ namespace GestionVeterinarias
             LimpiarCampos();
         }
 
-        private void dgvVeterinarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                // Obtiene la fila seleccionada
-                DataGridViewRow filaSeleccionada = dgvVeterinarios.Rows[e.RowIndex];
+                if (dgvVeterinarios.CurrentRow != null)
+                {
+                    nombre = txtNombreV.Text;
+                    especializacion = txtEspecializacion.Text;
+                    horario = txtHorario.Text;
+                    email = txtEmail.Text;
+                    clave = txtClave.Text;
 
-                // Asigna los valores de las celdas a los campos del formulario
-                txtNombreV.Text = filaSeleccionada.Cells["NombreUsuario"].Value?.ToString();
-                txtEspecializacion.Text = filaSeleccionada.Cells["Especializacion"].Value?.ToString();
-                txtHorario.Text = filaSeleccionada.Cells["Horario"].Value?.ToString();
-                txtEmail.Text = filaSeleccionada.Cells["Email"].Value?.ToString();
-                txtClave.Text = filaSeleccionada.Cells["Clave"].Value?.ToString();
+                    entityBusiness.ActualizarUsuario(nombre, especializacion, horario, email, clave);
+
+                    MessageBox.Show("Veterinario actualizado exitosamente.");
+
+                    CargarVeterinarios();
+                    LimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar veterinario: " + ex.Message);
             }
         }
     }

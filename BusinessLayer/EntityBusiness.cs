@@ -47,6 +47,42 @@ namespace BusinessLayer
             }
         }
 
+        // Método para actualizar un administrador
+        public void ActualizarUsuario(string nombre, string telefono, string clave)
+        {
+            Administrador administrador = (Administrador)UsuarioFactory.CrearUsuario(nombre, telefono, clave);
+
+            using (var unitOfWork = new UnitOfWork())
+            {
+                unitOfWork.Usuario.Update(administrador);
+                unitOfWork.Complete();
+            }
+        }
+
+        // Método para actualizar un veterinario
+        public void ActualizarUsuario(string nombre, string especializacion, string horario, string email, string clave)
+        {
+            Veterinario veterinario = (Veterinario)UsuarioFactory.CrearUsuario(nombre, especializacion, horario, email, clave);
+
+            using (var unitOfWork = new UnitOfWork())
+            {
+                unitOfWork.Usuario.Update(veterinario);
+                unitOfWork.Complete();
+            }
+        }
+
+        // Método para actualizar un recepcionista
+        public void ActualizarUsuario(string nombre, string email, string telefono, string clave)
+        {
+            Recepcionista recepcionista = (Recepcionista)UsuarioFactory.CrearUsuario(nombre, email, telefono, clave);
+
+            using (var unitOfWork = new UnitOfWork())
+            {
+                unitOfWork.Usuario.Update(recepcionista);
+                unitOfWork.Complete();
+            }
+        }
+
         // Método para obtener todos los administradores
         public IEnumerable<Administrador> GetAllAdministradores()
         {

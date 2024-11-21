@@ -66,6 +66,21 @@ namespace GestionVeterinarias
             dgvRecepcionistas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        private void dgvRecepcionistas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvRecepcionistas.Rows[e.RowIndex];
+
+                // Asigna los valores de las celdas a los campos del formulario
+                txtNombreR.Text = filaSeleccionada.Cells["NombreUsuario"].Value?.ToString();
+                txtEmail.Text = filaSeleccionada.Cells["Email"].Value?.ToString();
+                txtTelefono.Text = filaSeleccionada.Cells["Telefono"].Value?.ToString();
+                txtClave.Text = filaSeleccionada.Cells["Clave"].Value?.ToString();
+            }
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             nombre = txtNombreR.Text;
@@ -81,18 +96,28 @@ namespace GestionVeterinarias
             LimpiarCampos();
         }
 
-        private void dgvRecepcionistas_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                // Obtiene la fila seleccionada
-                DataGridViewRow filaSeleccionada = dgvRecepcionistas.Rows[e.RowIndex];
+                if (dgvRecepcionistas.CurrentRow != null)
+                {
+                    nombre = txtNombreR.Text;
+                    email = txtEmail.Text;
+                    telefono = txtTelefono.Text;
+                    clave = txtClave.Text;
 
-                // Asigna los valores de las celdas a los campos del formulario
-                txtNombreR.Text = filaSeleccionada.Cells["NombreUsuario"].Value?.ToString();
-                txtEmail.Text = filaSeleccionada.Cells["Email"].Value?.ToString();
-                txtTelefono.Text = filaSeleccionada.Cells["Telefono"].Value?.ToString();
-                txtClave.Text = filaSeleccionada.Cells["Clave"].Value?.ToString();
+                    entityBusiness.ActualizarUsuario(nombre, email, telefono, clave);
+
+                    MessageBox.Show("Recepcionista actualizado exitosamente.");
+
+                    CargarRecepcionistas();
+                    LimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar recepcionista: " + ex.Message);
             }
         }
     }

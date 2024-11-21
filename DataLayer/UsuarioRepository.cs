@@ -139,6 +139,123 @@ namespace DataLayer
             }
         }
 
+        // Método para actualizar un administrador
+        public void Update(Administrador administrador)
+        {
+            try
+            {
+                string updateUsuarioQuery = @"UPDATE Usuario
+                                            SET nombreUsuario = @nombreUsuario,
+                                                clave = @clave
+                                            WHERE nombreUsuario = @nombreUsuario";
+
+                using (SqlCommand command = new SqlCommand(updateUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombreUsuario", administrador.NombreUsuario);
+                    command.Parameters.AddWithValue("@clave", administrador.Clave);
+
+                    command.ExecuteNonQuery();
+                }
+
+                string updateAdministradorQuery = @"UPDATE Administrador
+                                                SET nombre = @nombre,
+                                                    telefono = @telefono
+                                                WHERE nombre = @nombre";
+
+                using (SqlCommand command = new SqlCommand(updateAdministradorQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombre", administrador.NombreUsuario);
+                    command.Parameters.AddWithValue("@telefono", administrador.Telefono);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al actualizar administrador: " + ex.Message);
+            }
+        }
+
+        // Método para actualizar un veterinario
+        public void Update(Veterinario veterinario)
+        {
+            try
+            {
+                string updateUsuarioQuery = @"UPDATE Usuario
+                                            SET nombreUsuario = @nombreUsuario,
+                                                clave = @clave
+                                            WHERE nombreUsuario = @nombreUsuario";
+
+                using (SqlCommand command = new SqlCommand(updateUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombreUsuario", veterinario.NombreUsuario);
+                    command.Parameters.AddWithValue("@clave", veterinario.Clave);
+
+                    command.ExecuteNonQuery();
+                }
+
+                string updateVeterinarioQuery = @"UPDATE Veterinario
+                                                SET nombre = @nombre,
+                                                    especializacion = @especializacion,
+                                                    horario = @horario,
+                                                    email = @email
+                                                WHERE nombre = @nombre";
+
+                using (SqlCommand command = new SqlCommand(updateVeterinarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombre", veterinario.NombreUsuario);
+                    command.Parameters.AddWithValue("@especializacion", veterinario.Especializacion);
+                    command.Parameters.AddWithValue("@horario", veterinario.Horario);
+                    command.Parameters.AddWithValue("@email", veterinario.Email);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al actualizar veterinario: " + ex.Message);
+            }
+        }
+
+        // Método para actualizar un recepcionista
+        public void Update(Recepcionista recepcionista)
+        {
+            try
+            {
+                string updateUsuarioQuery = @"UPDATE Usuario
+                                            SET nombreUsuario = @nombreUsuario,
+                                                clave = @clave
+                                            WHERE nombreUsuario = @nombreUsuario";
+
+                using (SqlCommand command = new SqlCommand(updateUsuarioQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombreUsuario", recepcionista.NombreUsuario);
+                    command.Parameters.AddWithValue("@clave", recepcionista.Clave);
+
+                    command.ExecuteNonQuery();
+                }
+
+                string updateRecepcionistaQuery = @"UPDATE Recepcionista
+                                                SET nombre = @nombre,
+                                                    email = @email,
+                                                    telefono = @telefono
+                                                WHERE nombre = @nombre";
+
+                using (SqlCommand command = new SqlCommand(updateRecepcionistaQuery, _connection, _transaction))
+                {
+                    command.Parameters.AddWithValue("@nombre", recepcionista.NombreUsuario);
+                    command.Parameters.AddWithValue("@email", recepcionista.Email);
+                    command.Parameters.AddWithValue("@telefono", recepcionista.Telefono);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al actualizar recepcionista: " + ex.Message);
+            }
+        }
+
         // Método para obtener todos los administradores
         public IEnumerable<Administrador> GetAllDbAdministradores()
         {

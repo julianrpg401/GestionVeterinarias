@@ -39,7 +39,9 @@
             this.txtNombreA = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblNombreA = new System.Windows.Forms.Label();
+            this.dgvAdministradores = new System.Windows.Forms.DataGridView();
             this.gbDatosAdministrador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdministradores)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDatosAdministrador
@@ -151,16 +153,27 @@
             this.lblNombreA.TabIndex = 0;
             this.lblNombreA.Text = "Nombre";
             // 
+            // dgvAdministradores
+            // 
+            this.dgvAdministradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdministradores.Location = new System.Drawing.Point(464, 12);
+            this.dgvAdministradores.Name = "dgvAdministradores";
+            this.dgvAdministradores.Size = new System.Drawing.Size(494, 217);
+            this.dgvAdministradores.TabIndex = 3;
+            this.dgvAdministradores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdministradores_CellClick);
+            // 
             // GestionAdministradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 239);
+            this.ClientSize = new System.Drawing.Size(968, 241);
+            this.Controls.Add(this.dgvAdministradores);
             this.Controls.Add(this.gbDatosAdministrador);
             this.Name = "GestionAdministradores";
             this.Text = "Gestion de administradores";
             this.gbDatosAdministrador.ResumeLayout(false);
             this.gbDatosAdministrador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdministradores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +191,6 @@
         private System.Windows.Forms.TextBox txtNombreA;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblNombreA;
+        private System.Windows.Forms.DataGridView dgvAdministradores;
     }
 }

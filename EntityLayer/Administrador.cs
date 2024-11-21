@@ -8,7 +8,6 @@ namespace EntityLayer
 {
     public class Administrador : Usuario
     {
-        public int AdminId { get; set; }
         public string Telefono { get; set; }
 
         public Administrador(string nombre, string telefono, string clave, string rol = "Administrador") : base(nombre, clave, rol)

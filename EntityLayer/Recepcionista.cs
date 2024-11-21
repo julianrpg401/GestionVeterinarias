@@ -8,7 +8,6 @@ namespace EntityLayer
 {
     public class Recepcionista : Usuario
     {
-        public int RecepcionistaId { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
 

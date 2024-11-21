@@ -8,7 +8,6 @@ namespace EntityLayer
 {
     public class Veterinario : Usuario
     {
-        public int VeterinarioId { get; set; }
         public string Especializacion { get; set; }
         public string Horario { get; set; }
         public string Email { get; set; }

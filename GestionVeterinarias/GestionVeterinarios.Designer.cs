@@ -44,14 +44,12 @@
             this.lblEspecializacion = new System.Windows.Forms.Label();
             this.lblNombreV = new System.Windows.Forms.Label();
             this.dgvVeterinarios = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbDatosVeterinario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeterinarios)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDatosVeterinario
             // 
-            this.gbDatosVeterinario.Controls.Add(this.label1);
             this.gbDatosVeterinario.Controls.Add(this.txtEmail);
             this.gbDatosVeterinario.Controls.Add(this.lblEmail);
             this.gbDatosVeterinario.Controls.Add(this.txtClave);
@@ -204,15 +202,6 @@
             this.dgvVeterinarios.TabIndex = 1;
             this.dgvVeterinarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVeterinarios_CellClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 186);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Clave";
-            // 
             // GestionVeterinarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +236,5 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.DataGridView dgvVeterinarios;
-        private System.Windows.Forms.Label label1;
     }
 }
